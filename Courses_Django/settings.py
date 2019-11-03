@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'branch',
     'contact',
     'courses',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [

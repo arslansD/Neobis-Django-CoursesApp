@@ -22,7 +22,6 @@ class CourseSerializers(serializers.ModelSerializer):
     class Meta:
         model = Courses
         fields = (
-            "url",
             "contacts",
             "branches",
             "name",

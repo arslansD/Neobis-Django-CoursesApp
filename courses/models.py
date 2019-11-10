@@ -1,5 +1,6 @@
 from django.db import models
 from category.models import Category
+from django.urls import reverse
 
 
 class Courses(models.Model):
@@ -11,3 +12,6 @@ class Courses(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_url(self):
+        return reverse("courses-detail", kwargs={"pk": self.pk})

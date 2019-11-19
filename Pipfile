@@ -10,6 +10,7 @@ djangorestframework = "==3.10.3"
 Django = "==2.2.6"
 drf-yasg = "==1.17.0"
 coverage = "*"
+python-decouple = "*"
 
 [requires]
 python_version = "3.6"

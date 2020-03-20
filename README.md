@@ -39,7 +39,7 @@ There are no tests yet.
 
 ## Deployment
 
-Currently, the project is not on the stage of deployment.
+https://courses-django.herokuapp.com/
 
 ## Built With
 

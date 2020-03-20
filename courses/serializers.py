@@ -1,10 +1,11 @@
 from rest_framework import serializers
+
 from branch.models import Branch
+from branch.serializers import BranchSerializer
 from category.models import Category
 from contact.models import Contact
-from .models import Courses
 from contact.serializers import ContactSerializer
-from branch.serializers import BranchSerializer
+from .models import Courses
 
 
 class CourseSerializers(serializers.ModelSerializer):

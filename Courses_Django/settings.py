@@ -11,12 +11,13 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-from decouple import config, Csv
+# Configure Django App for Heroku.
+import django_heroku
 
+from decouple import config, Csv
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -38,7 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'rest_framework',
+    'django_heroku',
+
     'category',
     'branch',
     'contact',
@@ -77,22 +81,20 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Courses_Django.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': config('Courses_project'),
-        'USER': config('arslansd'),
-        'PASSWORD': config('Weldire011'),
-        'HOST': '',
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASS'),
+        'HOST': config("DB_HOST"),
         'PORT': '',
         'ATOMIC_REQUESTS': True,
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -112,7 +114,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
@@ -126,8 +127,9 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+django_heroku.settings(locals())

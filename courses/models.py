@@ -1,6 +1,7 @@
 from django.db import models
-from category.models import Category
 from django.urls import reverse
+
+from category.models import Category
 
 
 class Courses(models.Model):

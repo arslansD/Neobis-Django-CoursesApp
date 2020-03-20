@@ -1,7 +1,7 @@
-from django.shortcuts import render
-from rest_framework.generics import ListCreateAPIView, RetrieveAPIView, RetrieveDestroyAPIView
-from .serializers import CourseSerializers
+from rest_framework.generics import ListCreateAPIView, RetrieveDestroyAPIView
+
 from .models import Courses
+from .serializers import CourseSerializers
 
 
 class CourseListView(ListCreateAPIView):
